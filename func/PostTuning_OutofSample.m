@@ -9,7 +9,7 @@ function [ PostTunedCode ] = PostTuning_OutofSample(SkeletonPoints,SkeletonPoint
    [test_num,d] = size(Data_Projection);
    U = ones(size(Y)); 
    epsion = unifrnd(0.9,1); %it should be the same with that used in PostTuning_SkeletonPoints.m (see Eq.4).
-   S= exp(-distMat(SkeletonPoints, X))-exp(-epsion);
+   S= (exp(-distMat(SkeletonPoints, X))-exp(-epsion))/exp(-epsion);
    S(S>=0) = 1;
    S =S'*d;
    Thre = mean(abs(Data_Projection(:)));
