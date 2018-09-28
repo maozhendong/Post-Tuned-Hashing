@@ -11,7 +11,7 @@ Y = sign(SkeletonPoints_Projection);
     runtimes = 5;
     U = ones(size(Y));
     epsion = unifrnd(0.9,1); % Note!!! You need to find a best epsion (see Eq.4) for your own data (if you want to test PTH on another dataset).  
-    S= exp(-distMat(X, X))-exp(-epsion);
+    S= (exp(-distMat(X, X))-exp(-epsion))/exp(-epsion);
     S(S>=0) = 1;
     S =S'*d;
     Thre = mean(abs(SkeletonPoints_Projection(:)));
