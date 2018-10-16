@@ -2,7 +2,8 @@
 %   dataset: Gaussian Mixture Dataset, 4000 2-d points from 4 different Gaussian distributions.
 
 addpath('./func/');
-clc;clear all;close all;
+clc;close all;
+% clear all;
 
 %load Dataset.
 load('GaussianMixtureData');
